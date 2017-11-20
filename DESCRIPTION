@@ -9,3 +9,4 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/wolass/refractoryANA
 BugReports: https://github.com/wolass/refractoryANA/issues
+Imports: bookdown
