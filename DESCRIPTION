@@ -1,0 +1,11 @@
+Package: refractoryANA
+Title: Reproducible analysis for the refractory anaphylxis literature review
+Version: 0.0.0.9000
+Authors@R: person("Wojciech", "Francuzik", email = "wolass@gmail.com", role = c("aut", "cre"))
+Description: This is a companion package to the review publication on refractory anaphylaxis. All data and alyses are presented here 
+Depends: R (>= 3.4.2)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/wolass/refractoryANA
+BugReports: https://github.com/wolass/refractoryANA/issues
