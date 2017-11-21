@@ -9,4 +9,5 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/wolass/refractoryANA
 BugReports: https://github.com/wolass/refractoryANA/issues
-Imports: bookdown
+Imports: bookdown, magrittr
+RoxygenNote: 6.0.1
