@@ -1,5 +1,6 @@
 ######## Load the data ########
 d <- read.csv("../data/raw_data/refractoryAnaphylaxis.csv")
+d <- read.csv("~/Documents/refractoryANA/analysis/data/raw_data/refractoryAnaphylaxis.csv")
 
 ######## prepearing the data frame ######
 mean(d$age,na.rm = T)
@@ -141,7 +142,25 @@ d$t_antihistamines <- c(T,T,T,F,T,F,F,F,F,T,
                         F,F,T,F,F,F,F,F,F,T,
                         T,F,F,T,F,F,F,F,T)
 
-# d$t_volume <- c()
+d$t_vasopressin <- rep(F,length(d$Therapy))
+d$t_vasopressin[c(3,10,11,27,28,29,30,31,32,33,35)] <- T
+terlipressin <- c(14,15)
+d$t_vasopressin[terlipressin] <- T
+d$t_vasopression <-  d$t_vasopressin
+metaraminol <-c(1, 6,16,17)
+isoprenaline.dobutamine <- c(22 ,36)
+norepi <- c(27,28,30,31,32,33,35,36,1,2,3,5,10)
+d$t_vasopression[c(metaraminol,isoprenaline.dobutamine,norepi)] <- T
+
+
+cardiac_bypass <- c(10,11,15,3,6,19)
+
+ALS <- c(17,18,19,21,25,30,39,6)
+
+b2 <- c(12,2,3,4)
+
+glucagon <- c(20,24)
+
 
 ###### Fatalities table ######
 

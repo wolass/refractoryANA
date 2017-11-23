@@ -23,15 +23,34 @@ guineapigs<- c(141,149) %>% length()
 no_case_rep <- 131 %>% length()
 
 # Include information from the anaphylaxis registry
-#load("~/Documents/anaphylaxis/data3.R")
+load("~/Documents/anaphylaxis/data3.R")
 ## See multiple adrenalin cases
-#require(magrittr)
-#data3$d_560_adren2_v5 %>% summary
+require(magrittr)
+data3$d_560_adren2_v5 %>% summary
 #data3[data3$d_560_adren2_v5=="yes",15:51] %>% summary
 #data3$q_142_fatal_treatment_v5%>% summary
 #data3[data3$q_142_fatal_treatment_v5=="yes",51:100] %>% summary
 
 
 
+### Here are some results from free treatment field of our registry - these indicate refractory anahpylaxis.
+insgesamt 3 Adrenalin-injektionen durch Hausarzt
 
+Ephedrin 50mg, Infusionen,Adrenalin als wiederholter Bolus (100 mikrogramm)ok, dann Adrenalinperfusor, Noradrenalinperfusor, Trendelenburglagerung
+
+Ephedrin 40mg, Magnesium 2 Ampullen, Defibrillation 3x 200Joule, Amiodaron 1 Ampulle
+
+Atropin mehrfach 0,5 mg
+Atropin Boli, 2 minütige mechanische und medikamentöse Reanimation
+Reanimation, weitere Medi unbekannt
+
+# We had two glucagon treated anaphylaxises here !!!
+data3$q_522_glucagon_v5 %>% summary()
+data3[which(data3$q_522_glucagon_v5=="yes"),200:300]
+
+
+# Our registry lists cases with dopamine:
+dop <- (data3$q_522_dopamine == "yes") %>% which()
+names(data3)
+data3[dop,c(11,12,66,74,366,297,43,44,45,46,47,48,49)]
 
