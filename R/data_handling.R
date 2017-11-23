@@ -1,14 +1,17 @@
 ######## Load the data ########
-d <- read.csv("../data/raw_data/refractoryAnaphylaxis.csv")
+# d <- read.csv("../data/raw_data/refractoryAnaphylaxis.csv")
 d <- read.csv("~/Documents/refractoryANA/analysis/data/raw_data/refractoryAnaphylaxis.csv")
 
 ######## prepearing the data frame ######
 mean(d$age,na.rm = T)
 d$Elicitor_gr <- rep(NA,length(d$Elicitor))
-d$Elicitor_gr[c(grepl("cont",d$Elicitor),24)] <- "contrast"
+d$Elicitor_gr[c(which(grepl("cont",d$Elicitor)==T),24)] <- "contrast"
 d$Elicitor_gr[c(4,7,13,19,20,21,38,39)] <- "unknown"
-d$Elicitor_gr[c(2,6,11,12,13,14,16,17,18,23,27,28,29,30,31,32,33,34,35,36,40,41)] <- "drug"
+d$Elicitor_gr[c(2,6,11,12,13,14,16,17,18,23,27,28,29,30,31,32,33,34,35,36,40,41,43)] <- "drug"
 d$Elicitor_gr[c(1,3,5,15,25,37,42)] <- "other"
+
+# d$Elicitor[21] <- "platinum"
+d$Elicitor[22] <- "contrast"
 
 d$Time.after.exposure
 d$Time <- c(5,5,10,NA,5,NA,5,NA,NA,NA,NA,NA,NA,NA,15,NA,NA,5,5,NA,NA,5,5,0.2,5,5,0.5,NA,5,20,5,5,10,5,5,5,15,NA,NA,0.5,0.5,5,NA)
@@ -78,7 +81,8 @@ demogr.tab <- data.frame(Age=d$age %>% split(d$Elicitor_gr) %>%
              lapply(function(x){
                which(x=="OP")  %>% length()/length(x)*100
              }) %>% unlist
-) %>% data.frame(Elicitor=rownames(.),.)
+) %>% data.frame(Elicitor=rownames(.),
+                 n=d$Elicitor_gr %>% factor %>% summary() %>% unlist,.)
 
 rownames(demogr.tab) <- NULL
 
@@ -130,7 +134,7 @@ d$What.helped_gr <- c("methylene blue",
 
 ##### Therapy dissection ####
 
-d$Therapy
+# d$Therapy
 
 d$t_steroids <- c(T,T,T,T,T,F,T,T,T,T,
                   T,T,T,F,F,F,F,F,T,T,
@@ -164,8 +168,14 @@ glucagon <- c(20,24)
 
 ###### Fatalities table ######
 
-fat <- data.frame(d[which(d$Death=="yes"),c(4,6,7,8,31,32)],
+fat <- data.frame(d[which(d$Death=="yes"),c(4,6,7,29,31,32)],
            "Epinephrine [mg]"= c(25,20.2,NA,0.6),
            "Fluids [L]" = c(1.5,2.5,0,2),
-           "vasopressors" = c(T,T,F,T))
+           "Vasopressors" = c("+","+","-","+"))
+
+pmf <- function(x){
+  ifelse(x==T,"+","-")
+}
+fat$t_steroids %<>% pmf()
+fat$t_antihistamines %<>%  pmf()
 
