@@ -24,11 +24,11 @@ create_graph() %>%
            shape="rectangle",
            width=2,
            height=0.6) %>%
-  add_node(x = 3, y = 1, label="Full-text articles excluded\nnon-refractory = 3\nnot a case report = 3\nnot anaphylaxis = 2\nanimal study = 2\njapanese language = 1",
+  add_node(x = 3, y = 1, label="Full-text articles excluded\nnon-refractory = 6\nnot a case report = 4\nnot anaphylaxis = 3\nanimal study = 3\njapanese language = 1",
            shape="rectangle",
            width=2,
            height=1) %>%
-  add_node(x = 0, y = 0, label="Studies included in\nqualitative synthesis\n(n = 37)",
+  add_node(x = 0, y = 0, label="Studies included in\nqualitative synthesis\n(n = 29)",
            shape="rectangle",
            width=2,
            height=0.6) %>%
