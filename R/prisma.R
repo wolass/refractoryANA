@@ -24,7 +24,7 @@ create_graph() %>%
            shape="rectangle",
            width=2,
            height=0.6) %>%
-  add_node(x = 3, y = 1, label="Full-text articles excluded\nnon-refractory = 6\nnot a case report = 4\nnot anaphylaxis = 3\nanimal study = 3\njapanese language = 1",
+  add_node(x = 3, y = 1, label="Full-text articles excluded\nnon-refractory = 6\nnot a case report = 4\nnot anaphylaxis = 3\nanimal study = 3\nJapanese language = 1",
            shape="rectangle",
            width=2,
            height=1) %>%

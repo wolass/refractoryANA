@@ -1,6 +1,34 @@
 ######## Load the data ########
 # d <- read.csv("../data/raw_data/refractoryAnaphylaxis.csv")
 d <- read.csv("~/Documents/refractoryANA/analysis/data/raw_data/refractoryAnaphylaxis.csv")
+ d[,c(1,2,3)]
+d[,3] <- as.character(d[,3])
+
+# Clean the authors references ####
+d[c(1,8,9,10,11,12,16,17,20:43),3] <- c("[@DaSilva2017]",rep("[@Oliveira2003]",3),
+                            rep("[@DelDuca2009]",2),
+                            rep("[@Baumann2009]",2),
+                            "[@Higgins1999]",
+                            "[@Allen2000]",
+                            "[@Zaloga1986]",
+                            "[@Zweizig1994]",
+                            "[@Laxenaire1984]",
+                            "[@Bickell1984]",
+                            "[@Javeed1996]",
+                            "[@Stocche2004]",
+                            "[@Liu2005]",
+                            "[@Goddet2006]",
+                            rep("[@Schummer2008]",6),
+                            "[@Schummer2004]",
+                            "[@Liang2008]",
+                            "[@AliciaWeissgerber2007]",
+                            "[@Hussain2008]",
+                            "[@Lango2009]",
+                            "[@Raft2012]",
+                            "[@Wang2016]",
+                            "[@Gibbs2003]")
+d$Source<- gsub(d$Source,pattern = "\\[",replacement = "")
+d$Source<- gsub(d$Source,pattern = "\\]",replacement = "")
 
 ######## prepearing the data frame ######
 mean(d$age,na.rm = T)
@@ -173,9 +201,10 @@ fat <- data.frame(d[which(d$Death=="yes"),c(4,6,7,29,31,32)],
            "Fluids [L]" = c(1.5,2.5,0,2),
            "Vasopressors" = c("+","+","-","+"))
 
-pmf <- function(x){
-  ifelse(x==T,"+","-")
-}
+source("R/pmf.R")
 fat$t_steroids %<>% pmf()
 fat$t_antihistamines %<>%  pmf()
 
+#### Vasopresors analysis ####
+temp.v <- d$What.helped_gr == "vasopressors"
+d[temp.v,]
