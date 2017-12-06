@@ -34,12 +34,12 @@ d$Source<- gsub(d$Source,pattern = "\\]",replacement = "")
 mean(d$age,na.rm = T)
 d$Elicitor_gr <- rep(NA,length(d$Elicitor))
 d$Elicitor_gr[c(which(grepl("cont",d$Elicitor)==T),24)] <- "contrast"
-d$Elicitor_gr[c(4,7,13,19,20,21,38,39)] <- "unknown"
-d$Elicitor_gr[c(2,6,11,12,13,14,16,17,18,23,27,28,29,30,31,32,33,34,35,36,40,41,43)] <- "drug"
+d$Elicitor_gr[c(4,7,13,19,20,38,39)] <- "unknown"
+d$Elicitor_gr[c(2,6,11,12,13,14,16,17,18,21,23,27,28,29,30,31,32,33,34,35,36,40,41,43)] <- "drug"
 d$Elicitor_gr[c(1,3,5,15,25,37,42)] <- "other"
 
 # d$Elicitor[21] <- "platinum"
-d$Elicitor[22] <- "contrast"
+#d$Elicitor[22] <- "contrast"
 
 d$Time.after.exposure
 d$Time <- c(5,5,10,NA,5,NA,5,NA,NA,NA,NA,NA,NA,NA,15,NA,NA,5,5,NA,NA,5,5,0.2,5,5,0.5,NA,5,20,5,5,10,5,5,5,15,NA,NA,0.5,0.5,5,NA)
@@ -208,3 +208,13 @@ fat$t_antihistamines %<>%  pmf()
 #### Vasopresors analysis ####
 temp.v <- d$What.helped_gr == "vasopressors"
 d[temp.v,]
+
+#### The whole sources table #####
+
+whole.tab <- data.frame(Author =paste0(d$Author," [",d$Source,"]"),
+           Elicitor = d$Elicitor_gr,
+           Age = d$age,
+           Sex =d$sex,
+           Setting = d$Situation_gr,
+           `What helped` =d$What.helped_gr,
+           Vasopressors= d$t_vasopression)
