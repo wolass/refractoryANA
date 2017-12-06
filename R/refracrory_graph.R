@@ -30,7 +30,7 @@ create_graph() %>%
            shape="rectangle",
            width=2,
            height=0.6) %>%
-  add_node(x = 2.5, y = -3, label="consider vasopressors\n(norepinephrine, vasopressine)",
+  add_node(x = 2.5, y = -3, label="consider vasopressors\n(norepinephrine, vasopressin)\nand methylene blue",
            shape="rectangle",
            width=2.3,
            height=0.6) %>%
@@ -67,9 +67,13 @@ create_graph() %>%
   add_edge(11,12) %>%
   select_edges() %>%
   add_global_graph_attrs(
+    attr = "fontcolor",
+    value = "black",
+    attr_type = "graph") %>%
+  add_global_graph_attrs(
     attr = "splines",
     value = "ortho",
     attr_type = "graph") %>%
-   render_graph()
-  # export_graph(file_name = "~/Documents/refractoryANA/analysis/figures/algo.png", file_type = "png", title = NULL,
-                # width = NULL, height = NULL)
+   # render_graph()
+  export_graph(file_name = "~/Documents/refractoryANA/analysis/figures/algo.png", file_type = "png", title = NULL,
+                width = NULL, height = NULL)

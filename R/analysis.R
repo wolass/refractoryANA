@@ -52,8 +52,6 @@ data3[which(data3$q_522_glucagon_v5=="yes"),200:300]
 dop <- (data3$q_522_dopamine == "yes") %>% which()
 dopam.anareg <- data3[dop,c(11,12,66,74,366,
                             241,57)]
-##### Source the files ####
-# source("R/data_handling.R")
-# source("R/prisma.R")
-# source("R/refracrory_graph.R")
+
+knitr::kable(dopam.anareg[,c(-3,-5)])
 
