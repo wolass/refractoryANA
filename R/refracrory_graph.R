@@ -46,6 +46,10 @@ create_graph() %>%
            shape="rectangle",
            width=2.5,
            height=0.6) %>%
+  add_node(x = 1, y = -4, label="No response:\nConsider: extracorporeal life support (CPB or ECMO)\n1. Gain time in dealing with life-threathening symptoms,\n2. Eliminate exposure to a possible (occluded) elicitor",
+           shape="rectangle",
+           width=8,
+           height=0.8) %>%
   add_edge(1,2) %>%
   add_edge(1,6) %>%
   add_edge(2,3) %>%
@@ -57,11 +61,15 @@ create_graph() %>%
   add_edge(4,9) %>%
   add_edge(10,11) %>%
   add_edge(2,10) %>%
+  add_edge(7,12) %>%
+  add_edge(8,12) %>%
+  add_edge(9,12) %>%
+  add_edge(11,12) %>%
   select_edges() %>%
   add_global_graph_attrs(
     attr = "splines",
     value = "ortho",
     attr_type = "graph") %>%
-  # render_graph()
-  export_graph(file_name = "~/Documents/refractoryANA/analysis/figures/algo.png", file_type = "png", title = NULL,
-                width = NULL, height = NULL)
+   render_graph()
+  # export_graph(file_name = "~/Documents/refractoryANA/analysis/figures/algo.png", file_type = "png", title = NULL,
+                # width = NULL, height = NULL)

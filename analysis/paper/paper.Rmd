@@ -174,9 +174,8 @@ Seedat et al. described a case of anaphylaxis while undergoing a bilateral knee 
 
 One case report described the use of military anti-shock trousers to perform external vasopressin on a patient who received inadvertently high doses of systemic immune therapy allergen [@Bickell1984]. Although this can be hardly available in critical care centers we would like to point out this minimally invasive method as a possible alternative measure in achieving normotension.
 
-The European anaphylaxis register lists 18 cases where dopamine was used. None of these reactions were fatal and `r ((dopam.anareg$d_severity_rm %>% summary())[4] / dopam.anareg$d_severity_rm %>% summary() %>% sum()*100) %>% round(1)`% were Ring and Messmer grade IV. `r ((dopam.anareg$d_elicitor_gr5=="drugs") %>% sum()/length(dopam.anareg$d_elicitor_gr5)*100) %>% round(1)`% of there reactions were elicited by drugs or occured during a medical procedure. Adrenaline was not used in `r ((dopam.anareg$d_522_adren_agg elicitor_gr5=="drugs") %>% sum()/length(dopam.anareg$d_elicitor_gr5)*100) %>% round(1)`% 
+The European anaphylaxis register lists 18 cases where dopamine was used. None of these reactions were fatal and `r ((dopam.anareg$d_severity_rm %>% summary())[4] / dopam.anareg$d_severity_rm %>% summary() %>% sum()*100) %>% round(1)`% were Ring and Messmer grade IV. `r ((dopam.anareg$d_elicitor_gr5=="drugs") %>% sum()/length(dopam.anareg$d_elicitor_gr5)*100) %>% round(1)`% of there reactions were elicited by drugs or occured during a medical procedure. Adrenaline was not used in `r ((dopam.anareg$d_elicitor_gr5=="drugs") %>% sum()/length(dopam.anareg$d_elicitor_gr5)*100) %>% round(1)`% 
 
- 
 # Glucagon in anaphylaxis with concomitant beta blockers
 
 Adrenaline may fail to inhibit an anaphylctic event in patients taking beta-blockers as both heart and lungs possess beta-adrenergic-receptors.
@@ -198,31 +197,28 @@ There also was a report where the patient was inadvertently given i.v. high dose
 
 In the most extreme cases, where all pharmacologic attempts fail to alleviate symptoms of anaphylaxis clinicians turned to last resort extracorporeal life support (ECLS) options. There were 4 reports where patients reacted extremely severe and all were operated on because of a heart condition in general anesthesia [`r which.sources(d$Source,"ECLS",d$What.helped_gr)`]. Two patients reacted to chlorhexidine, one to recuronium and in one case the elicitor could not be established. Only one of these patients was taking a beta blocker [@Yee2016]. All these patients recieved multiple doses of adrenaline 1 -- 15 mg, vasopressors, high volume replacement therapy, coricostreroids and antihistaminics. Upon prolonged resuscitation procedures two of these patients were place on cardiopulmonary bypass (CPB) and two on extracorporeal membrane oxygenation (ECMO) devices. After stabilizing of their condition, patients were weaned out from these supportive measures without neurological sequele.
 
-`r d[(d$What.helped_gr=="ECLS") %>% which(),]`
-life-threatening anaphylactic reactions occur in approximately 1 in 6000 anesthetic procedures and are associated with 5% mortality [@Weiss2015]. ECMO is widely used for the treatment of cardiogenic shock [@Sidebotham2010] and may also be used in cases of anaphylaxis. It is especially helpful where there is refractory anaphylaxis with cardiac or respiratory arrest. Its use may gain time for to get rid of the elicitor (metabolize the drug or find the elicitor). One of the reported cases identified the clorhexidin coated cathether to be responsible for the refractory shock, and after its removal patient responded immidiately to therapy. The use of ECMO facilitated the elicitor discovery [@Wang2016]. 
-
+Life-threatening anaphylactic reactions occur in approximately 1 in 6000 anesthetic procedures and are associated with 5% mortality [@Weiss2015]. ECMO is widely used for the treatment of cardiogenic shock [@Sidebotham2010] and may also be used in cases of anaphylaxis. It is especially helpful where there is refractory anaphylaxis with cardiac or respiratory arrest. Its use may gain time for to get rid of the elicitor (metabolize the drug or find the elicitor). One of the reported cases identified the clorhexidin coated cathether to be responsible for the refractory shock, and after its removal patient responded immidiately to therapy. The use of ECMO facilitated the elicitor discovery [@Wang2016]. 
 
 # Conclusion 
 <!-- **The conclusion for all articles should contain a brief summary of the data presented in the article. Please note that this section is meant to be distinct from, and appear before the ‘Expert opinion’ section.** -->
 
+We analysed case reports of refractory anaphylaxis and evaluated the undertaken therapeutic aproaches. The cases were mostly elicited by drugs and happend during a medical procedure. Patients were in all cases treated with adrenaline as a first line therapy, nearly all of them were given oxygen, steroids i.v. and fluid replacement therapy. 
 
-
+We highlight therapeutic options that should be evaluated in case of anaphylaxis non-responsive to first line therapy with adrenaline: use of mythylene blue, vasopressors, glucagon and extracorporeal life support. We suggest a managment algorithm for refractory anaphylaxis (see Fig. \@ref(fig:algo).
 
 # Expert Commentary: 500-1000 words (included in overall word count).
-<!-- **To distinguish the articles published in the Expert Review series, authors must provide an additional section entitled ‘Expert Commentary’. This section affords authors the opportunity to provide their interpretation of the data presented in the article and discuss the developments that are likely to be important in the future, and the avenues of research likely to become exciting as further studies yield more detailed results. The intention is to go beyond a conclusion and should not simply summarise the paper. Authors should answer the following:** -->
 
+Severe anaphylaxis is a critical medical condition requiring an immediate intervention. According to the international guidelines adrenaline given intramuscular (i.m.) is a rapid and relatively safe treatment stabilizing the symptoms quickly in a given patient. However, in a few patients this intervention might not be sufficient and, concomitantly to repeating its doses, other therapeutical measures will need to be applied. Such cases are regarded as refractory anaphylaxis, which are particulary seen, when the elicitor of the reaction is reaching the organism intravenously. This route is associated with a high systemic load of a given allergen or other mast cell activating molecule inducing a rapid onset of mediator release like histamine, but also tryptase and chymase, which are proteases and which may in addition to histamine promote severely anaphylaxis via activation of the plasma kallikrein and to enhancment of vascular permeability [@Imamura1996].
 
-Severe anaphylaxis is a critical medical condition requiring an immediate intervention. According to the international guidelines adrenaline intramuscular given is a rapid and relatively safe treatment stabilizing the symptoms quickly in a given patient. However, in a few patients this intervention might not be sufficient and besides repeating the doses other therapeutical measures will need to be applied. Such cases are regarded as refractory anaphylaxis, which are particulary seen, when the elicitor of the reaction is reaching the organism intravenously. This route is associated with a high systemic load of a given allergen or other mast cell activating molecule inducing a rapid onset of mediator release like histamine, but also tryptase and chymase, which are proteases and which may in addition to histamine promote severely anaphylaxis via activation of the plasma kallikrein and to enhancment of vascular permeability [@Imamura1996].
-In clinical practice it is necessary to identify patients of risk. Such risk factors should particulary be assessed in patients undergoing medical diagnostic and therapeutic measures. The measurement of tryptase enables to identify patients how are at risk for severe anaphylaxis. 
+In clinical practice it is necessary to identify patients of risk. Such risk factors should particulary be assessed in patients undergoing medical diagnostic and therapeutic measures. The measurement of tryptase enables to identify patients who are at risk for severe anaphylaxis. 
 
 For the future, biomarker measurements in a bed side setting may enable doctors to identify  patients experiencing severe, refractory anaphylaxis early in order to initiate intensified critical care treatment. Moreover, defined standardized treatment protocols for such cases of refractory anaphylaxis may provide an optimization of the treatment which can safe life in a given patient.
 
 # Key issues
+
 <!-- **An executive summary of the authors’ main points (bulleted) is very useful for time-constrained readers requiring a rapidly accessible overview.** -->
 
-<!-- * Matrix-Assisted Laser Desorption/Ionization  Mass Spectrometry Imaging (MALDI-MSI) is able to provide a molecular insight of the samples, detecting the presence of a great variety of analytes directly on-tissue and showing their spatial distribution across the tissue section. -->
-
-*? Epinephrine in appropriate doses is safe, and there are no abso- lute contraindications for its use in treating anaphylaxis. ? Delay in administration of epinephrine may lead to more severe and treatment resistant anaphylaxis.*[@Fineman2015]
+* Epinephrine in appropriate doses is still the mainstay of anaphylaxis therapy without any absolute contraindications.  for its use in treating anaphylaxis. ? Delay in administration of epinephrine may lead to more severe and treatment resistant anaphylaxis.*[@Fineman2015]
 * Glucagon
 * Vasopressors
 * ECLS
@@ -241,6 +237,8 @@ For the future, biomarker measurements in a bed side setting may enable doctors 
 
 # Figures and Tables
 <!-- **Up to 5 figures and 5 tables are permitted. For further information on tables and figures, please see our formatting guide**. -->
+
+
 
 ```{r prismaflow, echo=F,fig.cap="The PRISMA flowchart for included sources"}
 #source("../../R/prisma.R")
