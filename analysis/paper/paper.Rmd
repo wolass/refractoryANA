@@ -4,7 +4,7 @@ author:
   - Wojciech Francuzik
   - Sabine Dölle
   - Margitta Worm, MD
-date: "`r format(Sys.time(), '%d %B, %Y')`"
+date: "`r format(Sys.time(), '%d.%m.%Y')`"
 output: 
   bookdown::word_document2:
     fig_caption: yes
@@ -12,8 +12,8 @@ output:
 bibliography: references.bib
 csl: mee.csl
 abstract: |
-  **Introduction:**  Refractory anaphylaxis cases do not respond to treatment with intramuscular adrenaline. The incidence of refractory anaphylaxis is estimated to range between 3--5% of all cases of anaphylaxis. The risk factors for refractory anaphylaxis are unknown. In the present analysis, we aimed to evaluate the management and risk factors of refractory anaphylaxis to highlight possible clinical implications for updating current management algorithms.
-
+  **Introduction:**  Refractory anaphylaxis cases do not respond to treatment with intramuscular adrenaline. The incidence of refractory anaphylaxis is estimated to range between 3--5% of all cases of anaphylaxis. The risk factors for refractory anaphylaxis are unknown. In the present analysis, we aimed to evaluate the management and risk factors of refractory anaphylaxis to highlight possible clinical implications for updating current management algorithms. 
+  
   **Expert commentary:** According to the international guidelines adrenaline given intramuscular (i.m.) is a rapid and relatively safe treatment but may be insufficient. Therefore defined standardized treatment protocols for such cases of refractory anaphylaxis are needed to optimize the treatment. Point-of-care diagnostics may enable doctors to identify patients experiencing severe, refractory anaphylaxis early in order to initiate intensified critical care treatment. 
 keywords: |
   anaphylaxis; epinephrine; glucagon; hypotension; methylene blue; shock
@@ -67,7 +67,9 @@ We collected information about the elicitors, clinical setting, concomitant dise
 A major risk factor for refractory anaphylaxis is perioperative anaphylaxis. In `r (d$Situation_gr=="OP") %>% which %>% length()` (`r ((d$Situation_gr=="OP") %>% which %>% length()/length(d[,1])*100) %>% round(1)`%) cases the anaphylactic reaction occurred during a diagnostic or surgical procedure. The most common causes of refractory anaphylaxis based on the analyzed case reports were iatrogenic procedures including anesthesia drugs, aprotinin, and protamine, radiocontrast media (RCM). Surprisingly, no cases of insect venom anaphylaxis were found among these reports (see Table \@ref(tab:demograph)). While the incidence of perioperative anaphylaxis has been reported to be between 1 in 10,000 -- 20,000 anesthesia procedures, it has a relatively high fatality rate of 3 -- 10% of the perioperative fatalities. [@Nag2017]
 
 
-An early diagnosis of anaphylaxis during operative procedures can be suggested based on end-tidal CO~2~ collapse, which often is preceding cardiac arrest, even in the absence of any cutaneous manifestations. [@Baumann2009] In such case - treatment with adrenalin should be immediately initiated as delayed adrenaline use has been linked with increased mortality [@Simons2010] and refractoriness to adrenaline [@Fineman2015].  
+An early diagnosis of anaphylaxis during operative procedures can be suggested based on end-tidal CO~2~ collapse, which often is preceding cardiac arrest, even in the absence of any cutaneous manifestations. [@Baumann2009] In such case - treatment with adrenalin should be immediately initiated as delayed adrenaline use has been linked with increased mortality [@Simons2010] and refractoriness to adrenaline [@Fineman2015].
+
+
 
 # Therapy of refractory anaphylaxis
 
@@ -147,9 +149,9 @@ We highlight therapeutic options that should be evaluated in case of anaphylaxis
 
 Severe anaphylaxis is a critical medical condition requiring an immediate intervention. According to the international guidelines adrenaline given intramuscular (i.m.) is a rapid and relatively safe treatment stabilizing the symptoms quickly in a given patient. However, in a few patients, this intervention might not be sufficient and, concomitantly to repeating its doses, other therapeutical measures will need to be applied. Such cases are regarded as refractory anaphylaxis and are particularly seen when the elicitor of the reaction is reaching the organism intravenously. This route is associated with a high systemic load of a given allergen or other mast cell activating molecule inducing a rapid onset of mediator release like histamine, but also tryptase and chymase, which are proteases and which may in addition to histamine promote severely anaphylaxis via activation of the plasma kallikrein and to enhancement of vascular permeability [@Imamura1996].
 
-In clinical practice, it is necessary to identify patients at risk. Such risk factors should particularly be assessed in patients undergoing medical diagnostic and therapeutic measures. The measurement of tryptase enables to identify patients who are at risk for severe anaphylaxis. 
+In clinical practice, it is necessary to identify patients at risk. Such risk factors should particularly be assessed in patients undergoing medical diagnostic and therapeutic measures. The diagnosis of anaphylaxis is based on unspecific clinical presentation, most frequently with hypotension, bronchospasm and skin flushing. In cases where anaphylaxis is possible but the symptoms are not clearly apparent introduction of a point-of-case test could confirm the suspition in order to introduce immediate therapy with adrenaline. The measurement of tryptase enables to identify patients who are at risk for severe anaphylaxis (specificity of 0.93) but its sensitivity of 0.36 is insufficient [@Brown2004]. 
 
-For the future, biomarker measurements at a bedside setting may enable doctors to identify patients experiencing severe, refractory anaphylaxis early in order to initiate intensified critical care treatment. Moreover, defined standardized treatment protocols for such cases of refractory anaphylaxis may provide an optimization of the treatment which can save the life in a given patient.
+For the future,  measurements [@Wittenberg2017] at a bedside setting may enable doctors to identify patients experiencing severe, refractory anaphylaxis early in order to initiate intensified critical care treatment. Moreover, defined standardized treatment protocols for such cases of refractory anaphylaxis may provide an optimization of the treatment which can save the life in a given patient.
 
 # Key issues
 
