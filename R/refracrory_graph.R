@@ -1,7 +1,7 @@
 # Refractory ANA flow diagdramm
 require(DiagrammeR)
 
-create_graph() %>%
+g <- create_graph() %>%
   add_node(x = 0, y = 0,
            label="Anaphylaxis suspected:\n1. Assess ABC\n2. Inject adrenaline i.m.",
            shape="rectangle",
@@ -66,14 +66,12 @@ create_graph() %>%
   add_edge(9,12) %>%
   add_edge(11,12) %>%
   select_edges() %>%
-  add_global_graph_attrs(
-    attr = "fontcolor",
-    value = "black",
-    attr_type = "graph") %>%
-  add_global_graph_attrs(
-    attr = "splines",
-    value = "ortho",
-    attr_type = "graph") %>%
-   # render_graph()
-  export_graph(file_name = "~/Documents/refractoryANA/analysis/figures/algo.png", file_type = "png", title = NULL,
+  add_global_graph_attrs(value="black",
+                         attr = "fontcolor",
+                         attr_type = "node") %>%
+  add_global_graph_attrs(value="ortho",
+                         attr = "splines",
+                         attr_type = "graph")
+  render_graph(g)
+  export_graph(g,file_name = "~/Documents/refractoryANA/analysis/figures/algo.png", file_type = "png", title = NULL,
                 width = NULL, height = NULL)

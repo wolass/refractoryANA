@@ -29,11 +29,22 @@ d[c(1,8,9,10,11,12,16,17,20:43),3] <- c("[@DaSilva2017]",rep("[@Oliveira2003]",3
                             "[@Gibbs2003]")
 d$Source<- gsub(d$Source,pattern = "\\[",replacement = "")
 d$Source<- gsub(d$Source,pattern = "\\]",replacement = "")
-
+d$Author <- gsub(d$Author,pattern = " et .*",replacement = "")
+d$Author[c(18,19,21,22,28,29)] <- c(rep("Heytman",2),
+                                    "Allen","Zaloga","Liu","Goddet")
+#### Clear elicitors #####
+d$Elicitor <- as.character(d$Elicitor)
+d$Elicitor <- gsub(" .*","",d$Elicitor)
+d$Elicitor[c(1,6,7,
+             15,19,20,
+             24,25,42)] <- c("latex","bendamustine","unknown",
+                                 "menses","unknown","unknown",
+                                 "contrast","SIT","chlorhexidine"
+                           )
 ######## prepearing the data frame ######
 mean(d$age,na.rm = T)
 d$Elicitor_gr <- rep(NA,length(d$Elicitor))
-d$Elicitor_gr[c(which(grepl("cont",d$Elicitor)==T),24)] <- "contrast"
+d$Elicitor_gr[c(which(grepl("cont",d$Elicitor)==T))] <- "contrast"
 d$Elicitor_gr[c(4,7,13,19,20,38,39)] <- "unknown"
 d$Elicitor_gr[c(2,6,11,12,13,14,16,17,18,21,23,27,28,29,30,31,32,33,34,35,36,40,41,43)] <- "drug"
 d$Elicitor_gr[c(1,3,5,15,25,37,42)] <- "other"
@@ -109,8 +120,10 @@ demogr.tab <- data.frame(Age=d$age %>% split(d$Elicitor_gr) %>%
              lapply(function(x){
                which(x=="OP")  %>% length()/length(x)*100
              }) %>% unlist
-) %>% data.frame(Elicitor=rownames(.),
-                 n=d$Elicitor_gr %>% factor %>% summary() %>% unlist,.)
+           ) %>%
+             data.frame(Elicitor=rownames(.),
+                 n=d$Elicitor_gr %>% factor %>% summary() %>% unlist,
+                 .)
 
 rownames(demogr.tab) <- NULL
 
@@ -212,9 +225,9 @@ d[temp.v,]
 #### The whole sources table #####
 
 whole.tab <- data.frame(Author =paste0(d$Author," [",d$Source,"]"),
-           Elicitor = d$Elicitor_gr,
+           Elicitor = d$Elicitor,
            Age = d$age,
            Sex =d$sex,
            Setting = d$Situation_gr,
            `What helped` =d$What.helped_gr,
-           Vasopressors= d$t_vasopression)
+           Vasopressors= ifelse(d$t_vasopression==T,"yes","no"))

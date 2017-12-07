@@ -27,7 +27,7 @@ create_graph() %>%
   add_node(x = 3, y = 1, label="Full-text articles excluded\nnon-refractory = 6\nnot a case report = 4\nnot anaphylaxis = 3\nanimal study = 3\nJapanese language = 1",
            shape="rectangle",
            width=2,
-           height=1) %>%
+           height=1.1) %>%
   add_node(x = 0, y = 0, label="Studies included in\nqualitative synthesis\n(n = 29)",
            shape="rectangle",
            width=2,
@@ -44,6 +44,9 @@ create_graph() %>%
     attr = "splines",
     value = "spline",
     attr_type = "graph") %>%
+  add_global_graph_attrs(value="black",
+                         attr = "fontcolor",
+                         attr_type = "node") %>%
   # render_graph() %>%
   export_graph(file_name = "~/Documents/refractoryANA/analysis/figures/prism_flow.png", file_type = "png", title = NULL,
                width = NULL, height = NULL)

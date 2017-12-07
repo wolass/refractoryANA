@@ -12,11 +12,9 @@ output:
 bibliography: references.bib
 csl: mee.csl
 abstract: |
-  (maximum 200 words). 
-  
-  **Introduction:**  background; objectives; data sources; study eligibility criteria, participants, and interventions; study appraisal and synthesis methods; results; limitations; conclusions and implications of key findings. Authors are required to describe the significance of the topic under discussion. Areas covered - Authors are required to describe the research discussed and the literature search undertaken. 
-  
-  **Expert commentary:** - The author's expert view on the current status of the field under discussion. References must not be included in the abstract.
+  **Introduction:**  Refractory anaphylaxis cases do not respond to treatment with intramuscular adrenaline. The incidence of refractory anaphylaxis is estimated to range between 3--5% of all cases of anaphylaxis. The risk factors for refractory anaphylaxis are unknown. In the present analysis, we aimed to evaluate the management and risk factors of refractory anaphylaxis to highlight possible clinical implications for updating current management algorithms.
+
+  **Expert commentary:** According to the international guidelines adrenaline given intramuscular (i.m.) is a rapid and relatively safe treatment but may be insufficient. Therefore defined standardized treatment protocols for such cases of refractory anaphylaxis are needed to optimize the treatment. Point-of-care diagnostics may enable doctors to identify patients experiencing severe, refractory anaphylaxis early in order to initiate intensified critical care treatment. 
 keywords: |
   anaphylaxis; epinephrine; glucagon; hypotension; methylene blue; shock
 highlights: |
@@ -38,16 +36,16 @@ devtools::load_all(".",quiet = T)
 
 ```
 
-Department of Dermatology, Venerology and Allergology, Charité – Universitätsmedizin Berlin, corporate member of Freie Universität Berlin, Humboldt-Universität zu Berlin, and Berlin Institute of Health, Charitéplatz 1, 10117 Berlin,
+Department of Dermatology, Venerology, and Allergology, Charité – Universitätsmedizin Berlin, corporate member of Freie Universität Berlin, Humboldt-Universität zu Berlin, and Berlin Institute of Health, Charitéplatz 1, 10117 Berlin,
 
 **Corresponding author: **
 Prof. Dr. med. M. Worm margitta.worm@charite.de
 Phone: +49 30 450 529 005;      Fax: +49 30 450 529 902
 
 # Introduction
-Anaphylaxis is a potentially life-threatening mast cell dependent reaction to  most frequently food, drugs, insect venom. Anaphylaxis is a clinical diagnosis. It is highly likely if there is an acute onset of skin symptoms in conjuction with cardiovascular symptoms like hypotension and/or respiratory compromise [@Sampson2006]. The pathogenesis of anaphylaxis is related to a sudden, systemic, (mostly IgE dependent) degranulation of mast cells or basophils leading to the release of multiple mediators like histamine, tryptase, chymase, platelet-activating factor, prostaglandins, and leukotrienes [@Houser2015].
+Anaphylaxis is a potentially life-threatening mast cell-dependent reaction to most frequently food, drugs, insect venom. Anaphylaxis is a clinical diagnosis. It is highly likely if there is an acute onset of skin symptoms in conjunction with cardiovascular symptoms like hypotension and/or respiratory compromise [@Sampson2006]. The pathogenesis of anaphylaxis is related to a sudden, systemic, (mostly IgE dependent) degranulation of mast cells or basophils leading to the release of multiple mediators like histamine, tryptase, chymase, platelet-activating factor, prostaglandins, and leukotrienes [@Houser2015].
 
-Although anaphylaxis remains to be a clinical diagnosis [@Kemp2014], a standardized set of criteria to diagnose anaphylaxis have been established [@Sampson2006].By contrast the term refractory anaphylaxis has not established. For the purpose of this review, we define refractory anaphylaxis as anaphylaxis (meeting the criteria by NIAID/FAAN  [@Sampson2006]) unresponsive to the treatment with at least 2 doses of minimum 300 µg adrenalin. Unresponsiveness, in this case, is defined as a lack of expected normalization of clinical symptoms (i.e. rapid increase in blood pressure, bronchodilatation, tachycardia).
+Although anaphylaxis remains to be a clinical diagnosis [@Kemp2014], a standardized set of criteria to diagnose anaphylaxis have been established [@Sampson2006].By contrast, the term refractory anaphylaxis has not established. For the purpose of this review, we define refractory anaphylaxis as anaphylaxis (meeting the criteria by NIAID/FAAN  [@Sampson2006]) unresponsive to the treatment with at least 2 doses of minimum 300 µg adrenalin. Unresponsiveness, in this case, is defined as a lack of expected normalization of clinical symptoms (i.e. rapid increase in blood pressure, bronchodilatation, tachycardia).
 
 It is important to distinguish refractory anaphylaxis from recurrent anaphylaxis. In one case report authors used the term refractory anaphylaxis to describe 6 recurrent episodes of anaphylaxis associated with the monoclonal mast cell activation syndrome, which responded well to intramuscular doses of epinephrine [@Jagdis2014] and were ultimately treated with omalizumab. We did not include such reports into our analysis and suggest to use the term “recurrent” anaphylaxis instead of “refractory” in such cases. 
 
@@ -58,30 +56,28 @@ Risk factors for anaphylaxis include age, food elicitors (cow's milk and hen's e
 The management algorithms for anaphylaxis are based on consensus expert recommendations and might be incomplete when it comes to reactions that are not responding to the first line therapy. To date, the acute treatment of anaphylaxis is uniquely recommended in international guidelines and the mainstay of therapy is the early administration of intramuscular (i.m.) adrenaline [@Lazar2017].
 However, an optimal anaphylaxis treatment in a given patient is difficult to study because it is an emergency condition and placebo-controlled studies are limited for ethical reasons. Therefore most of the knowledge regarding the treatment of anaphylaxis is based on expert recommendations which are graded as low-level evidence sources.
 
-In the present analysis we aimed to evaluate the management and risk factors of refractory anaphylaxis to highlight possible clinical implications for updating current management algorithms.
+In the present analysis, we aimed to evaluate the management and risk factors of refractory anaphylaxis to highlight possible clinical implications for updating current management algorithms.
 
 We performed a database search in the "PubMed" database using the "RISmed"[@rismed] package for R statistical software [@R]. The search terms contained the words "refractory anaphylaxis" in articles published from 1950 till 2017. The search was conducted on 16.11.2017 and returned 150 results. All case reports of patients who experienced an anaphylactic event and did not respond to at least 600 µg of adrenaline were included in this study. Articles in English, Portuguese, French, and Spanish were included in the analysis, one article in Japanese was excluded. Additionally, case reports referenced in the included sources were added. We excluded reviews and papers not containing case description as well as cases which documented an appropriate response to injected adrenaline. Also, cases describing mast cell activation syndrome and refractory vasoplegia without the definitive diagnosis of anaphylaxis were not included. We finally included 29 Papers reporting `r d$Author %>% length()` cases of anaphylaxis. The detailed inclusion flowchart is illustrated in Fig \@ref(fig:prismaflow). 
 
-We collected information about the elicitors, clinical setting, concomitant diseases, medication, reaction symptoms, therapy and outcomes of the treatment. We used piloted polls to gather the data and all reports were screened once by the same researcher. We investigated which interventions were reported as successful in the treatment of anaphylactic hypotension that was not responding to injected (i.v. or i.m.) adrenaline. Successful and unsuccessful management of anaphylaxis was one of the most important outcomes we evaluated. This information was available in all cases. All of the studies were case reports therefore the evidence level was classified as low. The review protocol was not established prior to the review and the review did not undergo preregistration. 
+We collected information about the elicitors, clinical setting, concomitant diseases, medication, reaction symptoms, therapy and outcomes of the treatment. We used piloted polls to gather the data and all reports were screened once by the same researcher. We investigated which interventions were reported as successful in the treatment of anaphylactic hypotension that was not responding to injected (i.v. or i.m.) adrenaline. Successful and unsuccessful management of anaphylaxis was one of the most important outcomes we evaluated. This information was available in all cases. All of the studies were case reports, therefore, the evidence level was classified as low. The review protocol was not established prior to the review and the review did not undergo preregistration. 
 
 # Risk factors for refractory anaphylaxis
 
-A major risk factor for refractory anaphylaxis is perioperative anaphylaxis. In `r (d$Situation_gr=="OP") %>% which %>% length()` (`r ((d$Situation_gr=="OP") %>% which %>% length()/length(d[,1])*100) %>% round(1)`%) cases the anaphylactic reaction occured during a diagnostic or surgical procedure. The most common causes of refractory anaphylaxis based on the analyzed case reports were iatrogenic procedures including anesthesia drugs, aprotinin, and protamine, radiocontrast media (RCM). Surprisingly, no cases of insect venom anaphylaxis were found among these reports (see Table \@ref(tab:demograph)). While the incidence of perioperative anaphylaxis has been reported to be between 1 in 10,000 -- 20,000 anesthesia procedures, it has a relatively high fatality rate of 3 -- 10% of the perioperative fatalities. [@Nag2017]
+A major risk factor for refractory anaphylaxis is perioperative anaphylaxis. In `r (d$Situation_gr=="OP") %>% which %>% length()` (`r ((d$Situation_gr=="OP") %>% which %>% length()/length(d[,1])*100) %>% round(1)`%) cases the anaphylactic reaction occurred during a diagnostic or surgical procedure. The most common causes of refractory anaphylaxis based on the analyzed case reports were iatrogenic procedures including anesthesia drugs, aprotinin, and protamine, radiocontrast media (RCM). Surprisingly, no cases of insect venom anaphylaxis were found among these reports (see Table \@ref(tab:demograph)). While the incidence of perioperative anaphylaxis has been reported to be between 1 in 10,000 -- 20,000 anesthesia procedures, it has a relatively high fatality rate of 3 -- 10% of the perioperative fatalities. [@Nag2017]
 
 
 An early diagnosis of anaphylaxis during operative procedures can be suggested based on end-tidal CO~2~ collapse, which often is preceding cardiac arrest, even in the absence of any cutaneous manifestations. [@Baumann2009] In such case - treatment with adrenalin should be immediately initiated as delayed adrenaline use has been linked with increased mortality [@Simons2010] and refractoriness to adrenaline [@Fineman2015].  
 
 # Therapy of refractory anaphylaxis
 
-Most of the treatment strategies were in accordance with the guidelines of anaphylaxis management [@Simons2011] but were supplemented by additional procedures that have saved patients' lives when first-line therapy failed. We report the most frequent procedures in order to evaluate them in the treatment of refractory anaphylaxis. 
+Most of the treatment strategies were in accordance with the guidelines of anaphylaxis management [@Simons2011] but were supplemented by additional procedures that have saved patients' lives when first-line therapy failed (Table \@ref(tab:wholeTab)). We report the most frequent procedures in order to evaluate them in the treatment of refractory anaphylaxis. 
 
 Based on the analyzed reports, ambulatory patients were first treated with adrenaline, whereas patients experiencing anaphylaxis under anesthesia were usually first given intravenous volume replacement and 100% oxygen, adrenaline followed by steroid and antihistaminic agents. Epinephrine was given in all cases in various doses. 
 
-<!-- In Table X we provided therapeutic approaches used in the treatment of anaphylaxis.  -->
+4 fatal cases (`r (length(which(d$Death=="yes"))/length(d$Death)*100) %>% round(1)`%) which did not respond to any therapy are listed in the table \@ref(tab:tabFatal). 
 
-4 fatal cases (`r (length(which(d$Death=="yes"))/length(d$Death)*100) %>% round(1)`%) which did not respond to any therapy are listed in the table \@ref(tab:tabFatal) 
-
-World Allergy Organisation guidelines on anaphylaxis management suggest that refractory anaphylaxis should be treated with intubation, ventilation, intravenous vasopressors, glucagon and anticholinergic drugs [@Simons2011]. Patients should be transported to a critical care unit. The AAAAI [@Lieberman] is  suggesting a similar treatment but include dopamine, vasopressin, glucagon atropine, and methylene blue if epinephrine injections and volume expansion fail to alleviate hypotension. Also the EAACI [@Muraro2014] guidelines suggest to use glucagon in case of concomitant beta-blockade.
+World Allergy Organisation guidelines on anaphylaxis management suggest that refractory anaphylaxis should be treated with intubation, ventilation, intravenous vasopressors, glucagon and anticholinergic drugs [@Simons2011]. Patients should be transported to a critical care unit. The AAAAI [@Lieberman] is suggesting a similar treatment but include dopamine, vasopressin, glucagon atropine, and methylene blue if epinephrine injections and volume expansion fail to alleviate hypotension. Also, the EAACI [@Muraro2014] guidelines suggest using glucagon in case of concomitant beta-blockade.
 
 # Methylene blue for the treatment of refractory hypotension
 
@@ -93,7 +89,7 @@ Methylene blue is a well-investigated drug used for treating patients with methe
 
 Although the mechanism of action is thought to counteract the vasoplegia related hypotension, one case report successfully used methylene blue in the treatment of anaphylaxis without hypotension [@Bauer2013]. Authors suggested that the inhibition of GC may result in the decrease of histamine and platelet-activating factor (PAF) production which is a potent mediator of anaphylaxis [@Moritoki1992].
 
-The use of methylene blue in current management of anaphylaxis is scarce. We received no reports of methylene blue use in our International Registry of Anaphylaxis which contains over 10,000 cases to date.  
+The use of methylene blue in the current management of anaphylaxis is scarce. We received no reports of methylene blue use in our International Registry of Anaphylaxis which contains over 10,000 cases to date.  
 
 We propose to initiate the therapy in case of a refractory anaphylaxis with hypotension using 100 mg bolus i.v. and follow it with an infusion of 50 µg/kg/min. As a vector, a 100 mL of 5% dextrose can be used.  
 
@@ -109,22 +105,22 @@ Other vasopressors included metaraminol
 [`r which.sources(d$Source,"metara",list(d$What.helped,d$Therapy))`], methoxamine 
 [`r which.sources(d$Source,"methox",list(d$What.helped,d$Therapy))`], dopamine 
 [`r which.sources(d$Source,"dopam",list(d$What.helped,d$Therapy))`], and noradrenaline [`r which.sources(d$Source,"nor",list(d$What.helped,d$Therapy))`] infusions.
-Drugs given perioperatively were the elicing factors in all but two of these cases (`r round((length(d[temp.v,1])-2)/length(d[temp.v,1])*100,1)`%) and all patients reacted within minutes (range 5 - 20) upon exposition to the suspected drug. One patient reacted to systemic immune therapy (SIT) injection that was inadverently extremely high-concentrated [@Bickell1984] and in one case the elicitor could not be established [@Heytman2004].  
+Drugs given perioperatively were the eliciting factors in all but two of these cases (`r round((length(d[temp.v,1])-2)/length(d[temp.v,1])*100,1)`%) and all patients reacted within minutes (range 5 - 20) upon exposition to the suspected drug. One patient reacted to systemic immune therapy (SIT) injection that was inadvertently extremely high-concentrated [@Bickell1984] and in one case the elicitor could not be established [@Heytman2004].  
 
-Use of vasopressin in refractory anaphylaxis was only suggested in  management recommendations from the AAAAI [@Lieberman] and was never vastly investigated. Dopamine, however, is recommended by 2 out of three guidelines. Nevertheless, dopamine might be related to higher risk of mortality and adverse events than epinephrine or norepinephrine [@Avni2015]. Both norepinephrine and vasopressin may be appropriate second-line agents for the management of refractory hypotension. Vasopressin acts on the V1 receptors, while norepinephrine acts primarily on the alfa-adrenergic receptors, their synergistic effects may result in effective vasoconstriction [@DiChiara2008].
+Use of vasopressin in refractory anaphylaxis was only suggested in management recommendations from the AAAAI [@Lieberman] and was never vastly investigated. Dopamine, however, is recommended by 2 out of three guidelines. Nevertheless, dopamine might be related to higher risk of mortality and adverse events than epinephrine or norepinephrine [@Avni2015]. Both norepinephrine and vasopressin may be appropriate second-line agents for the management of refractory hypotension. Vasopressin acts on the V1 receptors, while norepinephrine acts primarily on the alfa-adrenergic receptors, their synergistic effects may result in effective vasoconstriction [@DiChiara2008].
 
-Seedat et al. described a case of anaphylaxis while undergoing a bilateral knee arthroscopy under general anesthesia. The refractory shock was not responding to repeated adrenalin (total 2 mg), antihistaminics and hydrocortisone [@Seedat2014]. Rapid response was achieved with the last resort injection of 1 U ornipressin that was repeatedly effective when biphasic reaction occurred. Authors concluded that vasopressin or ornipressin should be considered for the treatment of adrenaline-resistant anaphylactic shock before resuscitation is discontinued [@Seedat2014]. We support the use of vasopressin in refractory hypotension, combined with norepinephrine infusions. 
+Seedat et al. described a case of anaphylaxis while undergoing a bilateral knee arthroscopy under general anesthesia. The refractory shock was not responding to repeated adrenalin (total 2 mg), antihistaminics and hydrocortisone [@Seedat2014]. Rapid response was achieved with the last resort injection of 1 U ornipressin that was repeatedly effective when the biphasic reaction occurred. Authors concluded that vasopressin or ornipressin should be considered for the treatment of adrenaline-resistant anaphylactic shock before resuscitation is discontinued [@Seedat2014]. We support the use of vasopressin in refractory hypotension, combined with norepinephrine infusions. 
 
-One case report described the use of military anti-shock trousers to perform external vasopression on a patient who received inadvertently high doses of systemic immune therapy allergen [@Bickell1984]. Although this can be hardly available in critical care centers we would like to point out this minimally invasive method as a possible alternative measure in achieving normotension.
+One case report described the use of military anti-shock trousers to perform external vasopressin on a patient who received inadvertently high doses of systemic immune therapy allergen [@Bickell1984]. Although this can be hardly available in critical care centers we would like to point out this minimally invasive method as a possible alternative measure in achieving normotension.
 
 The European anaphylaxis register lists 18 cases where dopamine was used (mean age `r mean(dopam.anareg$d_age) %>% round(1)`; range `r dopam.anareg$d_age %>%  range() %>% paste0(collapse="--")`). None of these reactions were fatal and `r ((dopam.anareg$d_severity_rm %>% summary())[4] / dopam.anareg$d_severity_rm %>% summary() %>% sum()*100) %>% round(1)`% were Ring and Messmer grade IV. `r ((dopam.anareg$d_elicitor_gr5=="drugs") %>% sum()/length(dopam.anareg$d_elicitor_gr5)*100) %>% round(1)`% of there reactions were elicited by drugs or occured during a medical procedure. Adrenaline was not used in `r ((dopam.anareg$d_522_adren_agg=="no") %>% sum()/length(dopam.anareg$d_elicitor_gr5)*100) %>% round(1)`% 
 
 # Glucagon in anaphylaxis with concomitant beta blockers
 
-Adrenaline may fail to inhibit an anaphylctic event in patients taking beta-blockers as both heart and lungs possess beta-adrenergic receptors.
-Glucagon, a polypeptide hormone with potent inotropic and chronotropic actions was given in two cases of refractory hypotension in analyzed cases[@Zaloga1986; @Javeed1996]. Both patients recieiving glucagon were undergoing refractory anaphylaxis with the concomitant use of atenolol for arterial hypertension. They both reacted to contrast medium and after minutes they have devloped severe anaphylaxis not responding to repeated doses of adrenaline. Infusion of 1 mg glucagon per hour or 1 mg glucagon as a bolus releaved the refractory shock in both cases and it also sucessfully treated a recurrent biphasic reaction [@Javeed1996].
+Adrenaline may fail to inhibit an anaphylactic event in patients taking beta-blockers as both heart and lungs possess beta-adrenergic receptors.
+Glucagon, a polypeptide hormone with potent inotropic and chronotropic actions was given in two cases of refractory hypotension in analyzed cases[@Zaloga1986; @Javeed1996]. Both patients receiving glucagon were undergoing refractory anaphylaxis with the concomitant use of atenolol for arterial hypertension. They both reacted to contrast medium and after minutes they have developed severe anaphylaxis not responding to repeated doses of adrenaline. Infusion of 1 mg glucagon per hour or 1 mg glucagon as a bolus relieved the refractory shock in both cases and it also successfully treated a recurrent biphasic reaction [@Javeed1996].
 
-Adrenergic effects of glucagon are minimally influenced by beta-blockers [@Zaloga1986] as glucagon activates adenylyl cyclase directly [@Kemp2014], therefore it is especially useful in patients who are chronically treated with beta-blockers. Patients with concomitant beta-blockers often show bradycardia or normocardia during anaphylaxis [@Nag2017], as the reflexory tachycardia is surpressed by the beta-blockade. Authors who reported a fatal anaphylaxis case potentiated with beta blockers did not treat with glucagon what, they discuss, would be a good therapeutic attempt in their case [@Laxenaire1984].
+Adrenergic effects of glucagon are minimally influenced by beta-blockers [@Zaloga1986] as glucagon activates adenylyl cyclase directly [@Kemp2014], therefore it is especially useful in patients who are chronically treated with beta-blockers. Patients with concomitant beta-blockers often show bradycardia or normocardia during anaphylaxis [@Nag2017], as the reflexory tachycardia is suppressed by the beta-blockade. Authors who reported a fatal anaphylaxis case potentiated with beta blockers did not treat with glucagon what, they discuss, would be a good therapeutic attempt in their case [@Laxenaire1984].
 
 # Stopping the elicitor exposure
 In cases where the elicitor of anaphylaxis is known, and first-line therapy fails, it is advisable to stop the exposition to the likely allergen. Three case reports described the rapid improvement of a refractory anaphylaxis after preventing further contact with the allergen. 
@@ -137,41 +133,34 @@ There also was a report where the patient was inadvertently given i.v. high dose
 
 # Extracorporeal life support
 
-In the most extreme cases, where all pharmacologic attempts fail to alleviate symptoms of anaphylaxis clinicians turned to last resort extracorporeal life support (ECLS) options. There were 4 reports where patients reacted extremely severe and all were operated on because of a heart condition in general anesthesia [`r which.sources(d$Source,"ECLS",d$What.helped_gr)`]. Two patients reacted to chlorhexidine, one to recuronium and in one case the elicitor could not be established. Only one of these patients was taking a beta blocker [@Yee2016]. All these patients recieved multiple doses of adrenaline (total dose ranged 1 -- 15 mg), vasopressors, high volume replacement therapy, coricostreroids and antihistaminics. Upon prolonged resuscitation procedures two of these patients were place on cardiopulmonary bypass (CPB) and two on an extracorporeal membrane oxygenation (ECMO) device. After stabilizing of their condition, patients were weaned out from these supportive measures without neurological sequele.
+In the most extreme cases, where all pharmacologic attempts fail to alleviate symptoms of anaphylaxis clinicians turned to last resort extracorporeal life support (ECLS) options. There were 4 reports where patients reacted extremely severe and all were operated on because of a heart condition in general anesthesia [`r which.sources(d$Source,"ECLS",d$What.helped_gr)`]. Two patients reacted to chlorhexidine, one to rocuronium and in one case the elicitor could not be established. Only one of these patients was taking a beta blocker [@Yee2016]. All these patients received multiple doses of adrenaline (total dose ranged 1 -- 15 mg), vasopressors, high volume replacement therapy, corticosteroids, and antihistaminics. Upon prolonged resuscitation procedures two of these patients were placed on cardiopulmonary bypass (CPB) and two on an extracorporeal membrane oxygenation (ECMO) device. After stabilizing of their condition, patients were weaned out from these supportive measures without neurological sequelae.
 
-Life-threatening anaphylactic reactions occur in approximately 1 in 6000 anesthetic procedures and are associated with 5% mortality [@Weiss2015]. ECMO is widely used for the treatment of cardiogenic shock [@Sidebotham2010] and may also be used in cases of anaphylaxis. It is especially helpful where there is refractory anaphylaxis with cardiac or respiratory arrest. Its use may gain time for to eliminate the responsible elicitor (metabolize the drug or find the occluded elicitor). One of the reported cases identified the clorhexidin coated cathether to be responsible for the refractory shock, and after its removal patient responded immidiately to therapy. The use of ECMO facilitated the elicitor discovery [@Wang2016]. 
+Life-threatening anaphylactic reactions occur in approximately 1 in 6000 anesthetic procedures and are associated with 5% mortality [@Weiss2015]. ECMO is widely used for the treatment of cardiogenic shock [@Sidebotham2010] and may also be used in cases of anaphylaxis. It is especially helpful where there is refractory anaphylaxis with cardiac or respiratory arrest. Its use may gain time to eliminate the responsible elicitor (metabolize the drug or find the occluded elicitor). One of the reported cases identified the chlorhexidine coated catheter to be responsible for the refractory shock, and after its removal patient responded immediately to therapy. The use of ECMO facilitated the elicitor discovery [@Wang2016]. 
 
 # Conclusion 
 
-We analysed case reports of refractory anaphylaxis and evaluated the undertaken therapeutic approaches. The cases were most frequently elicited by drugs and happend during a medical procedure. All patients were treated with adrenaline as a first line therapy, nearly all of them were given oxygen, steroids i.v. and fluid replacement therapy. 
+We analyzed case reports of refractory anaphylaxis and evaluated the undertaken therapeutic approaches. The cases were most frequently elicited by drugs and happened during a medical procedure. All patients were treated with adrenaline as a first line therapy, nearly all of them were given oxygen, steroids i.v. and fluid replacement therapy. 
 
-We highlight therapeutic options that should be evaluated in case of anaphylaxis non-responsive to first line therapy with adrenaline: methylene blue, vasopressors, glucagon and extracorporeal life support. We suggest a managment algorithm for refractory anaphylaxis (see Fig. \@ref(fig:algo)) that is supplementary to the established protocols.
+We highlight therapeutic options that should be evaluated in case of anaphylaxis non-responsive to first-line therapy with adrenaline: methylene blue, vasopressors, glucagon and extracorporeal life support. We suggest a management algorithm for refractory anaphylaxis (see Fig. \@ref(fig:algo)) that is supplementary to the established protocols.
 
 # Expert Commentary
 
-Severe anaphylaxis is a critical medical condition requiring an immediate intervention. According to the international guidelines adrenaline given intramuscular (i.m.) is a rapid and relatively safe treatment stabilizing the symptoms quickly in a given patient. However, in a few patients this intervention might not be sufficient and, concomitantly to repeating its doses, other therapeutical measures will need to be applied. Such cases are regarded as refractory anaphylaxis, which are particularly seen, when the elicitor of the reaction is reaching the organism intravenously. This route is associated with a high systemic load of a given allergen or other mast cell activating molecule inducing a rapid onset of mediator release like histamine, but also tryptase and chymase, which are proteases and which may in addition to histamine promote severely anaphylaxis via activation of the plasma kallikrein and to enhancment of vascular permeability [@Imamura1996].
+Severe anaphylaxis is a critical medical condition requiring an immediate intervention. According to the international guidelines adrenaline given intramuscular (i.m.) is a rapid and relatively safe treatment stabilizing the symptoms quickly in a given patient. However, in a few patients, this intervention might not be sufficient and, concomitantly to repeating its doses, other therapeutical measures will need to be applied. Such cases are regarded as refractory anaphylaxis and are particularly seen when the elicitor of the reaction is reaching the organism intravenously. This route is associated with a high systemic load of a given allergen or other mast cell activating molecule inducing a rapid onset of mediator release like histamine, but also tryptase and chymase, which are proteases and which may in addition to histamine promote severely anaphylaxis via activation of the plasma kallikrein and to enhancement of vascular permeability [@Imamura1996].
 
-In clinical practice it is necessary to identify patients of risk. Such risk factors should particulary be assessed in patients undergoing medical diagnostic and therapeutic measures. The measurement of tryptase enables to identify patients who are at risk for severe anaphylaxis. 
+In clinical practice, it is necessary to identify patients at risk. Such risk factors should particularly be assessed in patients undergoing medical diagnostic and therapeutic measures. The measurement of tryptase enables to identify patients who are at risk for severe anaphylaxis. 
 
-For the future, biomarker measurements in a bed side setting may enable doctors to identify  patients experiencing severe, refractory anaphylaxis early in order to initiate intensified critical care treatment. Moreover, defined standardized treatment protocols for such cases of refractory anaphylaxis may provide an optimization of the treatment which can safe life in a given patient.
+For the future, biomarker measurements at a bedside setting may enable doctors to identify patients experiencing severe, refractory anaphylaxis early in order to initiate intensified critical care treatment. Moreover, defined standardized treatment protocols for such cases of refractory anaphylaxis may provide an optimization of the treatment which can save the life in a given patient.
 
 # Key issues
 
-<!-- **An executive summary of the authors’ main points (bulleted) is very useful for time-constrained readers requiring a rapidly accessible overview.** -->
-
+* Drug elicited reactions in perioperative setting and concomitant beta-blocker use are the most important risk factors for refractory anaphylaxis.
 * Epinephrine in appropriate doses is still the mainstay of anaphylaxis therapy without any absolute contraindications and should be given as soon as anaphylaxis is suspected. 
-* Glucagon infusion should be considered when patients recieve beta-blockers.
-* Methylene blue and Vasopressors should be considered together with volume replacement therapy in cases of refractory hypotension. 
-* 
-
+* Glucagon infusion should be considered when patients receive beta-blockers.
+* Methylene blue and vasopressors i.v. should be considered together with volume replacement therapy in cases of refractory hypotension. 
+* In cases of severe refractory anaphylaxis with prolonged resuscitation an extracorporeal life support should be evaluated.
 
 # Annotated bibliography
 <div id="refs"></div>
-<!-- **A maximum of 100 references is suggested. Ensure that all key work relevant to the topic under discussion is cited in the text and listed in the bibliography. Reference to unpublished data should be kept to a minimum and authors must obtain a signed letter of permission from cited persons to use unpublished results or personal communications in the manuscript.** -->
-
-<!-- **Important references should be highlighted with a one/two star system and brief annotations should be given (see the journal’s Instructions for Authors page for examples and for a more detailed description of our referencing style).** -->
-
-
 
 # Figures and Tables
 
@@ -189,15 +178,14 @@ knitr::kable(demogr.tab,col.names = c("Elicitor","No. cases","Age","Male fractio
              caption = "Demography of refractory anaphylaxis cases.")
 ```
 
+```{r wholeTab}
+knitr::kable(whole.tab,
+             caption = "List of papers and anaphylaxis cases included in the sudy, summarizing their elicitors, and effective therapy interventions")
+```
 
 ```{r tabFatal}
 rownames(fat) <- NULL
 colnames(fat) <- c("Elicitor","Age","Sex","Situation","Steroids","Antihistamines","Epinephrine [mg]", "Fluids [L]","Vasopressors"  )
 knitr::kable(fat,
              caption = "Fatal anaphylaxis cases, not responsive to any form of therapy.")
-```
-
-```{r wholeTab}
-knitr::kable(whole.tab,
-             caption = "List of papers and anaphylaxis cases included in the sudy, summarizing their elicitors, effective interventions and therapy.")
 ```
