@@ -3,11 +3,11 @@ require(DiagrammeR)
 
 create_graph() %>%
   add_node(x = -1.2, y = 4,
-           label="Records identified through\ndatabase searching\n(n = 150)",
+           label="Records identified through\ndatabase searching\n(n = 151)",
            shape="rectangle",
            width=2,
            height=0.6) %>%
-  add_node(x = 1.2, y = 4, label="Additional records idientified\nthrough references\n(n = 18)",
+  add_node(x = 1.2, y = 4, label="Additional records idientified\nthrough references from screened\nreports (n = 18)",
            shape="rectangle",
            width=2.2,
            height=0.6) %>%
@@ -28,7 +28,7 @@ create_graph() %>%
            shape="rectangle",
            width=2,
            height=1.1) %>%
-  add_node(x = 0, y = 0, label="Studies included in\nqualitative synthesis\n(n = 29)",
+  add_node(x = 0, y = 0, label="Studies included in\nqualitative synthesis\n(n = 30)",
            shape="rectangle",
            width=2,
            height=0.6) %>%

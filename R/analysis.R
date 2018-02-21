@@ -1,6 +1,6 @@
 # The search was performed on 16.11.2017
-require(RISmed)
 require(magrittr)
+require(RISmed)
 res <- EUtilsSummary("refractory anaphylaxis",
 type="esearch",
 db="pubmed",
