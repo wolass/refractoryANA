@@ -10,7 +10,7 @@ output:
     fig_caption: yes
     reference_docx: "../templates/templateNumberedSections.docx"
 bibliography: references.bib
-csl: erci.csl
+csl: expert-review-of-clinical-immunology.csl
 abstract: |
   **Introduction:** Patients experiencing anaphylaxis who do not recover after the treatment with intramuscular adrenaline are regarded to suffer from refractory anaphylaxis. The incidence of refractory anaphylaxis is estimated to range between 3--5% of anaphylaxis cases. The risk factors for refractory anaphylaxis are unknown.
 
