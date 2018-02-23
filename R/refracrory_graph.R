@@ -65,13 +65,13 @@ g <- create_graph() %>%
   add_edge(8,12) %>%
   add_edge(9,12) %>%
   add_edge(11,12) %>%
-  select_edges() %>%
+  # select_edges() %>%
   add_global_graph_attrs(value="black",
                          attr = "fontcolor",
                          attr_type = "node") %>%
   add_global_graph_attrs(value="ortho",
                          attr = "splines",
                          attr_type = "graph")
-  render_graph(g)
+  # render_graph(g)
   export_graph(g,file_name = "~/Documents/refractoryANA/analysis/figures/algo.png", file_type = "png", title = NULL,
                 width = NULL, height = NULL)

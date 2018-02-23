@@ -72,10 +72,10 @@ create_graph() %>%
   add_edge(13,9) %>%
   add_edge(14,9) %>%
   add_edge(15,4) %>%
-  select_edges() %>%
+  # select_edges() %>%
   add_global_graph_attrs(
     attr = "splines",
-    value = "spline",
+    value = "ortho",
     attr_type = "graph") %>%
   add_global_graph_attrs(value="black",
                          attr = "fontcolor",

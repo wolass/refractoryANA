@@ -7,20 +7,20 @@ create_graph() %>%
            shape="rectangle",
            width=2,
            height=0.6) %>%
-  add_node(x = 1.2, y = 4, label="Additional records idientified\nthrough references from screened\nreports (n = 18)",
+  add_node(x = 1.2, y = 4, label="Additional records idientified\nthrough references from screened\nreports (n = 19)",
            shape="rectangle",
            width=2.2,
            height=0.6) %>%
-  add_node(x = 0, y = 3, label="Records after duplicates removed\n(n = 161)",
+  add_node(x = 0, y = 3, label="Records after duplicates removed\n(n = 162)",
            shape="rectangle",
            width=2.5) %>%
-  add_node(x = 0, y = 2, label="Records screened\n(n = 161)",
+  add_node(x = 0, y = 2, label="Records screened\n(n = 162)",
            shape="rectangle",
            width=2) %>%
   add_node(x = 3, y = 2, label="Records excluded\n(n = 115)",
            shape="rectangle",
            width=2) %>%
-  add_node(x = 0, y = 1, label="Full-text articles assessed\nfor eligibility\n(n = 46)",
+  add_node(x = 0, y = 1, label="Full-text articles assessed\nfor eligibility\n(n = 47)",
            shape="rectangle",
            width=2,
            height=0.6) %>%
@@ -39,7 +39,7 @@ create_graph() %>%
   add_edge(4,5) %>%
   add_edge(6,7) %>%
   add_edge(6,8) %>%
-  select_edges() %>%
+  # select_edges() %>%
   add_global_graph_attrs(
     attr = "splines",
     value = "spline",
